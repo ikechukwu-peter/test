@@ -5,6 +5,11 @@ formElement.addEventListener("submit", async (e) => {
     let inputValue = document.querySelector(".search-input").value;
     let weatherData = await fetchData(inputValue)
 
+
+    const url = `/.netlify/functions/`;
+
+    fetch(url).then(data => console.log(data)).catch(err => console.log(err))
+
     console.log(weatherData)
     let jsonWeatherData = document.querySelector(".json")
 
@@ -15,11 +20,11 @@ formElement.addEventListener("submit", async (e) => {
 
 })
 
-//
-const api = {
-    url: 'https://api.weatherapi.com/v1/current.json?key',
-    key: '7e3a305ab0de4f649f003625202606'
-};
+
+// const api = {
+//     url: 'https://api.weatherapi.com/v1/current.json?key',
+//     key: '7e3a305ab0de4f649f003625202606'
+// };
 
 const fetchData = async (query) => {
     try {

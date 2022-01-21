@@ -1,0 +1,12 @@
+{
+  "name": "weda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ikechukwu-peter/test.git",
+  "author": "ikechukwu-peter <pitiyke@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^14.2.0"
+  }
+}
