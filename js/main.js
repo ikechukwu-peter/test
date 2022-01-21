@@ -13,8 +13,8 @@ formElement.addEventListener("submit", async (e) => {
     console.log(weatherData)
     let jsonWeatherData = document.querySelector(".json")
 
-    let html = ` <p> Celsius: ${location.current.temp_c} </p>
-                <p> Celsius: ${location.current.temp_f} </p>
+    let html = ` <p> Celsius: ${location.current} </p>
+                <p> Celsius: ${location.current} </p>
 `
     jsonWeatherData.insertAdjacentHTML("afterbegin", html)
 
