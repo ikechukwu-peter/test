@@ -13,7 +13,7 @@ let jsonWeatherData = document.querySelector(".json")
 
 //
 const api ={
-    url: 'http://api.weatherapi.com/v1/current.json?key',
+    url: 'https://api.weatherapi.com/v1/current.json?key',
     key: '7e3a305ab0de4f649f003625202606'
 };
 
