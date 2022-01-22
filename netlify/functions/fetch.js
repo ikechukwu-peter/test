@@ -7,13 +7,21 @@
 
 
 
-export function handler(event, context) {
+exports.handler = async(event, context) =>  {
     console.log(event);
     console.log(context);
- return {
-     statusCode: 200,
-     key: process.env.KEY,
-     url: process.env.URL
- }
+    try {
+        return {
+            statusCode: 200,
+            key: process.env.KEY,
+            url: process.env.URL
+        }
+    } catch (error) {
+        return {
+            statusCode: 500,
+            message: "Failed"
+        }
+    }
+ 
 }
           
