@@ -6,7 +6,7 @@ formElement.addEventListener("submit", async (e) => {
     // let weatherData = await fetchData(inputValue)
 
 
-    const url = `../netlify/functions/fetch`;
+    const url = `../.netlify/functions/fetch`;
 
     fetch(url).then(data => console.log(data)).catch(err => console.log(err))
     console.log("I ran")
