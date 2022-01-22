@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
-import { config } from "dotenv";
-config({ path: './.env' });
+// import fetch from "node-fetch";
+// import { config } from "dotenv";
+// config({ path: './.env' });
 
 
 // const API_ENDPOINT = 'https://cat-fact.herokuapp.com/facts';
