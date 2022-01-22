@@ -8,6 +8,8 @@ dotenv.config({ path: './.env' });
 
 
 exports.handler =  (event, context) => {
+    console.log(event);
+    console.log(context);
  return {
      statusCode: 200,
      key: process.env.KEY,

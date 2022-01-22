@@ -3,20 +3,21 @@ let formElement = document.querySelector(".form")
 formElement.addEventListener("submit", async (e) => {
     e.preventDefault();
     let inputValue = document.querySelector(".search-input").value;
-    let weatherData = await fetchData(inputValue)
+    // let weatherData = await fetchData(inputValue)
 
 
-    const url = `/.netlify/functions/fetch`;
+    const url = `../netlify/functions/fetch`;
 
     fetch(url).then(data => console.log(data)).catch(err => console.log(err))
+    console.log("I ran")
 
-    console.log(weatherData)
-    let jsonWeatherData = document.querySelector(".json")
+//     console.log(weatherData)
+//     let jsonWeatherData = document.querySelector(".json")
 
-    let html = ` <p> Celsius: ${location.current} </p>
-                <p> Celsius: ${location.current} </p>
-`
-    jsonWeatherData.insertAdjacentHTML("afterbegin", html)
+//     let html = ` <p> Celsius: ${location.current} </p>
+//                 <p> Celsius: ${location.current} </p>
+// `
+//     jsonWeatherData.insertAdjacentHTML("afterbegin", html)
 
 })
 
