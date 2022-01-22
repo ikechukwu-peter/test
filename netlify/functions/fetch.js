@@ -7,15 +7,17 @@
 
 
 
-exports.handler = async(event, context) =>  {
+exports.handler = async (event, context) => {
     console.log(event);
     console.log(context);
     try {
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: "Hello World" }),
-            key: process.env.KEY,
-            url: process.env.URL
+            body: JSON.stringify({
+                message: "Hello World", key: process.env.KEY,
+                url: process.env.URL
+            }),
+
         }
     } catch (error) {
         return {
@@ -23,6 +25,5 @@ exports.handler = async(event, context) =>  {
             message: "Failed"
         }
     }
- 
+
 }
-          
