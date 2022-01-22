@@ -16,9 +16,9 @@ exports.handler = async (event, context) => {
         let weatherData = await response.json();
         return {
             statusCode: 200,
-            body: {
+            body: JSON.stringify({
                 weatherData
-            }
+            })
         };
 
 
