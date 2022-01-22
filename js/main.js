@@ -1,5 +1,5 @@
 let formElement = document.querySelector(".form")
-// https://curpraweather.vercel.app/
+
 formElement.addEventListener("submit", async (e) => {
     e.preventDefault();
     let inputValue = document.querySelector(".search-input").value;
@@ -9,6 +9,8 @@ formElement.addEventListener("submit", async (e) => {
         let response = await fetch(url);
         let data = await response.json();
         console.log(data)
+
+        //Selecting div
         let jsonWeatherData = document.querySelector(".json")
 
         let html = ` <p> Celsius: ${data.weatherData.current.temp_c} </p>
@@ -20,14 +22,5 @@ formElement.addEventListener("submit", async (e) => {
         console.log(error)
         alert(error ? error : "Check your internet connection.")
     }
-
-
 })
-
-
-// const api = {
-//     url: 'https://api.weatherapi.com/v1/current.json?key',
-//     key: '7e3a305ab0de4f649f003625202606'
-// };
-
 

@@ -1,11 +1,13 @@
 const fetch = require("axios");
 
 exports.handler = async (event, context) => {
-    console.log(event);
-    console.log(context);
     try {
+        //destructure the input from the user
         const { query } = event.queryStringParameters;
-        let response = await fetch(`${process.env.FETCHURL}=${process.env.KEY}&q=${query}`)
+        //fetch the data
+        let response = await fetch(`
+        ${process.env.FETCHURL}=
+        ${process.env.KEY}&q=${query}`)
         let weatherData = response.data
         return {
             statusCode: 200,
@@ -14,7 +16,6 @@ exports.handler = async (event, context) => {
             })
         };
 
-
     } catch (error) {
         return {
             statusCode: 400,
@@ -22,8 +23,6 @@ exports.handler = async (event, context) => {
                 status: "fail",
                 message: error.message
             })
-
         }
     }
-
 }
