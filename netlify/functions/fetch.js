@@ -1,4 +1,4 @@
-const fetch = ("node-fetch");
+const fetch = require("node-fetch");
 // import { config } from "dotenv";
 // config({ path: './.env' });
 
