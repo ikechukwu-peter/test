@@ -1,4 +1,4 @@
-// import fetch from "node-fetch";
+const fetch = ("node-fetch");
 // import { config } from "dotenv";
 // config({ path: './.env' });
 
@@ -11,18 +11,25 @@ exports.handler = async (event, context) => {
     console.log(event);
     console.log(context);
     try {
+        const { query } = event.queryStringParameters;
+        let response = await fetch(`${process.env.FETCHURL}=${process.env.KEY}&q=${query}`)
+        let weatherData = await response.json();
         return {
             statusCode: 200,
-            body: JSON.stringify({
-                key: process.env.KEY,
-                FETCHURL: process.env.FETCHURL
-            }),
+            body: {
+                weatherData
+            }
+        };
 
-        }
+
     } catch (error) {
         return {
             statusCode: 500,
-            message: "Failed"
+            body: {
+                status: "fail",
+                message: error.message
+            }
+
         }
     }
 
