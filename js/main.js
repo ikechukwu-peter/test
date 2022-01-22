@@ -5,7 +5,7 @@ formElement.addEventListener("submit", async (e) => {
     let inputValue = document.querySelector(".search-input").value;
     try {
         //Creating URL
-        const url = `../.netlify/functions/fetch?query=${inputValue}`;
+        const url = `/.netlify/functions/fetch?query=${inputValue}`;
         let response = await fetch(url);
         let data = await response.json();
         console.log(data)
