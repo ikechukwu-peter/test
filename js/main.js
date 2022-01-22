@@ -1,5 +1,5 @@
 let formElement = document.querySelector(".form")
-
+// https://curpraweather.vercel.app/
 formElement.addEventListener("submit", async (e) => {
     e.preventDefault();
     let inputValue = document.querySelector(".search-input").value;
@@ -11,8 +11,8 @@ formElement.addEventListener("submit", async (e) => {
         console.log(data)
         let jsonWeatherData = document.querySelector(".json")
 
-        let html = ` <p> Celsius: ${location.current.temp_c} </p>
-                <p> Fahrenheit.: ${location.current.temp_f} </p>
+        let html = ` <p> Celsius: ${data.current.temp_c} </p>
+                <p> Fahrenheit.: ${data.current.temp_f} </p>
 `
         jsonWeatherData.insertAdjacentHTML("afterbegin", html)
 
