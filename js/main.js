@@ -14,7 +14,7 @@ formElement.addEventListener("submit", async (e) => {
         let html = ` <p> Celsius: ${data.weatherData.current.temp_c} </p>
                 <p> Fahrenheit.: ${data.weatherData.current.temp_f} </p>`
 
-        if (jsonWeatherData.hasChildNodes()) {
+        if (jsonWeatherData.children.length) {
             jsonWeatherData.removeChild()
             jsonWeatherData.insertAdjacentHTML("afterbegin", html)
         }
@@ -23,7 +23,6 @@ formElement.addEventListener("submit", async (e) => {
     } catch (error) {
         console.log(error)
         alert(error ? error : "Check your internet connection.")
-
     }
 
 
