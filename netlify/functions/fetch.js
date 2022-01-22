@@ -1,11 +1,4 @@
 const fetch = require("axios");
-// import { config } from "dotenv";
-// config({ path: './.env' });
-
-
-// const API_ENDPOINT = 'https://cat-fact.herokuapp.com/facts';
-
-
 
 exports.handler = async (event, context) => {
     console.log(event);
@@ -24,7 +17,7 @@ exports.handler = async (event, context) => {
 
     } catch (error) {
         return {
-            statusCode: 500,
+            statusCode: 400,
             body: JSON.stringify({
                 status: "fail",
                 message: error.message
