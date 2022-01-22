@@ -12,9 +12,13 @@ formElement.addEventListener("submit", async (e) => {
         let jsonWeatherData = document.querySelector(".json")
 
         let html = ` <p> Celsius: ${data.weatherData.current.temp_c} </p>
-                <p> Fahrenheit.: ${data.weatherData.current.temp_f} </p>
-`
-        jsonWeatherData.insertAdjacentHTML("afterbegin", html)
+                <p> Fahrenheit.: ${data.weatherData.current.temp_f} </p>`
+
+        if (jsonWeatherData.hasChildNodes()) {
+            jsonWeatherData.removeChild()
+            jsonWeatherData.insertAdjacentHTML("afterbegin", html)
+        }
+
 
     } catch (error) {
         console.log(error)
