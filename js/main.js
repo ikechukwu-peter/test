@@ -7,7 +7,7 @@ formElement.addEventListener("submit", async (e) => {
         //Creating URL
         const url = `../.netlify/functions/fetch?query=${inputValue}`;
         let response = await fetch(url);
-        let data = response.json();
+        let data = await response.json();
         console.log(data)
         let jsonWeatherData = document.querySelector(".json")
 
