@@ -16,6 +16,8 @@ formElement.addEventListener("submit", async (e) => {
 
         if (jsonWeatherData.children.length) {
             jsonWeatherData.removeChild()
+        }
+        else {
             jsonWeatherData.insertAdjacentHTML("afterbegin", html)
         }
 
