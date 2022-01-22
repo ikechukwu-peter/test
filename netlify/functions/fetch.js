@@ -14,8 +14,8 @@ exports.handler = async (event, context) => {
         return {
             statusCode: 200,
             body: JSON.stringify({
-                message: "Hello World", key: process.env.KEY,
-                url: process.env.URL
+                key: process.env.KEY,
+                FETCHURL: process.env.FETCHURL
             }),
 
         }
