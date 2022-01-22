@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const fetch = require("axios");
 // import { config } from "dotenv";
 // config({ path: './.env' });
 
@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
     try {
         const { query } = event.queryStringParameters;
         let response = await fetch(`${process.env.FETCHURL}=${process.env.KEY}&q=${query}`)
-        let weatherData = await response.json();
+        let weatherData = response.data
         return {
             statusCode: 200,
             body: JSON.stringify({
